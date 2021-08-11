@@ -1,0 +1,92 @@
+{{!-- This is the {{body}} homepage that appears after users successfully log in --}}
+
+  <div class="container-fluid mt-5 mx-0"> {{!-- Page container using grid 12 --}}
+
+    <div class="row justify-content-center">{{!-- Set columns in a row --}}
+
+      <div class="col-6 mx-0">  {{!-- Left Column --}}
+          <h1>Recent Posts</h1>
+          {{#each blogs as |blog| }}
+          
+          <div class="card" style="width: 100%;"> {{!-- Individual Post Cards --}}
+            <div class="card-body">
+              <h2 class="card-title text-success">{{blog.title}}</h2>
+              <h6 class="fst-italic">by {{user.username}} on {{blog.date}}</h6>
+              <p class="card-text text-dark">{{blog.content}}</p>
+              <hr>
+              {{#each blog.comments}}
+              <h6 class="fst-italic" style="color: #198754">Comment:</h6>
+              {{this.comment_text}}
+              <hr>
+              {{/each}}
+
+              <a href="/postpage/{{blog.id}}" class="btn btn-success">Read</a>
+            </div>
+          </div> {{!-- End of individual post cards --}}
+          {{/each}}
+
+      </div> {{!-- End of left column --}}
+
+      <div class="col-6"> {{!-- Right Column --}}
+
+          <div class="join-container mt-0"> {{!-- Chat Container --}}
+            <h1 style="color:black">Let's Chat!</h1>
+
+            <header class="join-header">
+            <h1 style="color:white">Get bilingual!</h1>
+            </header>
+
+            <main class="join-main">
+              <form action="chat.html">
+
+              <div class="form-control">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Enter username..."
+                  required
+                />
+              </div>
+
+              <div class="form-control">
+              <label for="room">Room</label>
+                <select name="room" id="room">
+                  <option value="General">General</option>
+                  <option value="French">French</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="German">German</option>
+                  <option value="Portugese">Portugese</option>
+                  <option value="Italian">Italian</option>
+                </select>
+              </div>
+              <button type="submit" id="joinchat" class="active btn" style="background:#0f5132">Join Chat</button>
+              </form>
+
+            </main> {{!-- End of chat container body --}}
+
+          </div> {{!-- End of chat container --}}
+
+          <div class="join-container mt-0"> {{!-- Translation Container --}}
+
+            <h1 style="color:black">Need a translation?</h1>
+
+            <div class="card" style="width: 100%;"> {{!-- Translation Container Card (not necessarily a card) --}}
+              <div class="card-body" style="background: #5FA98C">
+                
+              </div>
+                   
+            </div> {{!-- End of translation card --}}
+
+          </div> {{!-- End of translation container--}}
+
+        </div> {{!-- End of right column --}}
+   
+  </div> {{!-- End of page container --}}
+
+{{!-- Script for Chat Room was created as a result of tutorial by: --}}
+{{!-- Brad Traversy at: --}}
+{{!--   https://www.youtube.com/watch?v=jD7FnbI76Hg&t=1339s --}}
+{{!--   https://github.com/bradtraversy/chatcord --}}
+

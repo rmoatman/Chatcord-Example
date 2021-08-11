@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get bilingual</title>
+
+  {{!-- FontAwesome -- needed for send button --}}
+  <link
+  rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous"
+  />
+
+  {{!-- Bootstrap --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+    crossorigin="anonymous">
+
+  {{!-- Local Stylesheet --}}
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  {{!-- Header --}}
+  <header class="display-flex justify-space-between align-center p-2 text-light bg-success bg-gradient" style="--bs-bg-opacity: .75">
+
+    <h1 class="p-2" style="font-size: 64pt"><i class="fas fa-comments"></i>&#160Get bilingual! </h1>
+    <div class="container-fluid mx-0"> {{!-- Page container using grid 12 --}}
+
+      <div class="row justify-content-center">{{!-- Set columns in a row --}}
+
+        <div class="col-6 mx-0">  {{!-- Left Column --}}
+          <h3 class="p-2 fst-italic">A fun place to meet others, learn other languages, and practice!</h3>
+      </div>
+
+      <div class="col-6 mx-0">  {{!-- Left Column --}}
+        <ul class="nav nav-pills justify-content-end">
+          {{#if logged_in}}
+          <li class="nav-item p-1" id="home-button" style="width: 150px">
+            <a class="nav-link active btn" style="background:#0f5132" id="home" aria-current="page" href="#" >Home</a>
+          </li>
+          
+          <li class="nav-item p-1"  id="dashboard-button" style="width: 150px">
+            <a class="nav-link active btn" style="background:#0f5132" id="dashboard" aria-current="page" href="#" >Dashboard</a>
+          </li>
+
+          <li class="nav-item p-1" style="width: 150px">
+            <a class="nav-link active btn" style="background:#0f5132" id="logout" aria-current="page" href="#" >Logout</a>
+          </li>
+          <script src="/js/navigation.js"></script>
+          {{/if}}
+        </ul>
+      </div>
+
+    </div>
+  
+  </header>
+
+{{!-- Body --}}
+  <main>
+     {{{ body }}}
+  </main>
+
+{{!-- Footer --}}
+  <footer>
+      
+  </footer>
+
+    <!-- Only include the logout script if the user is logged in -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>

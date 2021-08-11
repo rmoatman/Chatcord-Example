@@ -1,0 +1,27 @@
+{{!-- This page allows the user to add a comment --}}
+<div class="card" style="width: 80%;">
+  <div class="card-body">
+    <h2 class="card-title" style="color: #198754">{{post.title}}</h2>
+    <h6 class="fst-italic">by {{post.user.username}} on {{post.date}}</h6>
+    <p class="card-text text-dark">{{post.content}}</p>
+    <hr>
+    <h5 class="fst-italic" style="color: #198754">Comments:</h5>
+
+    {{#each post.comments}}
+    {{this.comment_text}}
+    <hr>
+    {{/each}}
+    <hr>
+    
+    <h5 style="color: #198754">Add a New Comment:</h5>
+
+      <div class="form-floating mb-3">
+        <input type="comment" class="form-control" id="new_comment" placeholder="New Comment">
+        <label for="new_comment">New Comment</label>
+      </div>
+    
+<button class="btn btn-success" id="comment-card">Submit</a>
+  </div>
+</div>
+
+<script src="/js/addcomments.js"></script>

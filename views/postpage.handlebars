@@ -1,0 +1,24 @@
+{{!-- This is the page that appears when a single post is selected --}}
+<div class="container-fluid mt-5 mx-0">
+
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title" style="color: #0f5132">{{post.title}}</h2>
+      <h6 class="fst-italic">by {{post.user.username}} on {{post.date}}</h6>
+      <p class="card-text text-dark">{{post.content}}</p>
+      <hr>
+
+
+      {{#each post.comments}}
+      <h5 class="fst-italic" style="color: #198754">Comment:</h6>
+      {{this.comment_text}}
+      <hr>
+      {{/each}}
+
+      <a href="/newcomment/{{post.id}}" class="btn btn-success">Add New Comment</a>
+    </div>
+  </div>
+
+</div>
+
+

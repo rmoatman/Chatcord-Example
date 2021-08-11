@@ -1,0 +1,24 @@
+[
+  {    
+    "date": "01/01/21",
+    "comment_text": "This is a comment",
+    "user_id": "1",
+    "blog_id": "2"
+
+  },
+
+  {
+    "date": "01/02/21",
+    "comment_text": "This is another comment",
+    "user_id": "2",
+    "blog_id": "4"
+  },
+
+  {
+    "date": "01/03/21",
+    "comment_text": "This is yet another comment",
+    "user_id": "3",
+    "blog_id": "4"
+  }
+
+]

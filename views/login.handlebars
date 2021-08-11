@@ -1,0 +1,69 @@
+<div class="container-fluid mt-5 mx-0"> {{!-- Page container using grid 12 --}}
+  <h2>Welcome!  Please sign-in to continue.</h2>
+  <h4 class="fst-italic">(For review purposes, use user@email.com  123456)</h4>
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-md-10 mx-auto col-lg-5">
+        
+        {{!-- Login Column--}}
+        <form class="form login-form">
+
+          <div class="p-4 p-md-5 border rounded-3 bg-light" style="height: 400px">
+
+            <h3> Returning User</h3>
+            {{!-- Returning User Email --}}
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control form-input" id="email-login" placeholder="name@example.com">
+              <label for="email-login">Email address</label>
+            </div>
+
+            {{!-- Returning User Password --}}
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="password-login" placeholder="Password">
+              <label for="password-login">Password</label>
+            </div>
+
+            {{!-- Submit button --}}
+            <button class="w-100 btn btn-lg btn-success" type="submit">Login</button>
+
+          </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-10 mx-auto col-lg-5">
+      {{!-- Sign-up Column--}}
+      <form class="form signup-form">
+
+        <div class="p-4 p-md-5 border rounded-3 bg-light" style="height: 400px">
+
+          <h3> New User</h3>
+          {{!-- New User Username --}}
+          <div class="form-floating mb-3">
+            <input type="username" class="form-control" id="username-signup" placeholder="username">
+            <label for="username-signup">Username</label>
+          </div>
+
+          {{!-- New User Email --}}
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control form-input" id="email-signup" placeholder="name@example.com">
+            <label for="email-signup">Email address</label>
+          </div>
+
+          {{!-- New User Password --}}
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password-signup" placeholder="Password">
+            <label for="password-signup">Password</label>
+          </div>
+
+          {{!-- Sign-up Button --}}
+          <button class="w-100 btn btn-lg btn-success" type="submit">Signup</button>
+
+        </div>
+      
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/login.js"></script>

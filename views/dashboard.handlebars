@@ -1,0 +1,32 @@
+{{!-- This is the {{body}} homepage that appears after users successfully log in --}}
+  <div class="container-fluid mt-5 mx-0">
+
+    <h1>Dashboard</h1>
+    <a href="/newpostview" class="btn btn-success p-2 m-2" style="width: 100%">Click Here to Create New Post</a>
+
+    {{#each blogs as |blog| }}
+      <div class="card container-fluid">
+        <div class="card-body">
+          <h2 class="card-title text-success">{{blog.title}}</h2>
+          <h6 class="fst-italic">by {{user.username}} on {{blog.date}}</h6>
+          <p class="card-text text-dark">{{blog.content}}</p>
+          <hr>
+          {{#each blog.comments}}
+          <h6 class="fst-italic" style="color: #198754">Comment:</h6>
+          {{this.comment_text}}
+          <hr>
+          {{/each}}
+
+          <a href="/postpage/{{blog.id}}" class="btn btn-success" style="width: 150px">Read</a>
+          <a href="/editpost/{{blog.id}}" class="btn btn-success" style="width: 150px">Edit</a>
+          <a href="/deletepost/{{blog.id}}" class="btn btn-success" style="width: 150px">Delete</a>
+          </div>
+      </div>
+    {{/each}}
+
+  </div>
+
+  
+
+
+
